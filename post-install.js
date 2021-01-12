@@ -8,6 +8,7 @@ const glob = require("glob");
 const minify = require("html-minifier-terser").minify;
 console.log("\x1b[36m", " -- Shopify Bones Injector -- ", "\x1b[0m");
 
+var parent = require("parent-package-json");
 console.log("__dirname", __dirname);
 console.log(
   "path.dirname(require.main.filename)",
@@ -22,6 +23,15 @@ console.log("process.env.INIT_CWD", process.env.INIT_CWD);
 console.log("process.env.PWD", process.env.PWD);
 console.log("process.cwd()", process.cwd());
 console.log("parentModule", parentModule());
+var pathToParent = parent().path;
+console.log("pathToParent", pathToParent);
+
+console.log("module.parent", module.parent);
+console.log("path.dirname(module.parent)", path.dirname(module.parent));
+console.log(
+  "path.dirname(module.parent.filename)",
+  path.dirname(module.parent.filename)
+);
 
 const dirOut = process.env.INIT_CWD; // project root
 glob("injections/**", {}, (err, files) => {
