@@ -21,9 +21,8 @@ glob("injections/**", {}, (err, files) => {
       dirOut,
       filePath.slice("injections/".length)
     );
-    path.resolve(dirOut, filePath);
+    // console.log(` Considering: `, filePath, outputPath);
     // If .liquid, let's do a cheeky minification effort
-    console.log(` Considering: `, filePath, outputPath);
     if (extension == ".liquid") {
       const contents = fse.readFileSync(filePath, "utf8");
       var minified = minify(contents, {
