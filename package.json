@@ -1,0 +1,24 @@
+{
+  "name": "@thetechdept/shopify-bones-injector",
+  "version": "1.0.0",
+  "description": "Automatically inject files (primarily `.liquid`) from a Shopify Bones package into your project on install",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node ./post-install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thetechdept/shopify-bones-injector.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thetechdept/shopify-bones-injector/issues"
+  },
+  "homepage": "https://github.com/thetechdept/shopify-bones-injector#readme",
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "glob": "^7.1.6",
+    "html-minifier-terser": "^5.1.1"
+  }
+}
