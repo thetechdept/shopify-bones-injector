@@ -6,29 +6,12 @@ const path = require("path");
 const parentModule = require("parent-module");
 const glob = require("glob");
 const minify = require("html-minifier-terser").minify;
-console.log("\x1b[36m", " -- Shopify Bones Injector -- ", "\x1b[0m");
-
-var parent = require("parent-package-json");
-console.log("__dirname", __dirname);
 console.log(
-  "path.dirname(require.main.filename)",
-  path.dirname(require.main.filename)
+  "\x1b[36m",
+  "\n----------------------------\n-- Shopify Bones Injector --\n----------------------------",
+  "\x1b[0m"
 );
-console.log(" path.resolve(__dirname)", path.resolve(__dirname));
-console.log(" process.env.PWD", process.env.PWD);
-console.log(" path.resolve(./)", path.resolve("./"));
-console.log("------------------\n\n");
-console.log("path.resolve(.)", path.resolve("."));
-console.log("process.env.INIT_CWD", process.env.INIT_CWD);
-console.log("process.env.PWD", process.env.PWD);
-console.log("process.cwd()", process.cwd());
-console.log("parentModule", parentModule());
-var pathToParent = parent().path;
-console.log("pathToParent", pathToParent);
-
-console.log("module.parent", module.parent);
-
-const dirOut = process.env.INIT_CWD; // project root
+const dirOut = process.env.INIT_CWD; // project root (not parent package)
 glob("injections/**", {}, (err, files) => {
   files.forEach((filePath) => {
     const extension = path.extname(filePath);
