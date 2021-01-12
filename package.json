@@ -1,6 +1,6 @@
 {
   "name": "@thetechdept/shopify-bones-injector",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Automatically inject files (primarily `.liquid`) from a Shopify Bones package into your project on install",
   "main": "index.js",
   "scripts": {
