@@ -4,7 +4,7 @@
   "description": "Automatically inject files (primarily `.liquid`) from a Shopify Bones package into your project on install",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node ./post-install.js"
+    "inject": "node ./index.js"
   },
   "repository": {
     "type": "git",

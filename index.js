@@ -27,11 +27,6 @@ var pathToParent = parent().path;
 console.log("pathToParent", pathToParent);
 
 console.log("module.parent", module.parent);
-console.log("path.dirname(module.parent)", path.dirname(module.parent));
-console.log(
-  "path.dirname(module.parent.filename)",
-  path.dirname(module.parent.filename)
-);
 
 const dirOut = process.env.INIT_CWD; // project root
 glob("injections/**", {}, (err, files) => {
