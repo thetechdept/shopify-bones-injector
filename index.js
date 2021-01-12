@@ -41,7 +41,7 @@ glob("injections/**", {}, (err, files) => {
           overwrite: true,
         })
         .then(() => {
-          console.log(` Minified ${outputPath} -> ${filePath}`);
+          console.log(` Minified ${filePath} -> ${outputPath}`);
         })
         .catch((err) => {
           console.error(err);
@@ -54,7 +54,7 @@ glob("injections/**", {}, (err, files) => {
           overwrite: true,
         })
         .then(() => {
-          console.log(` Injected ${outputPath} -> ${filePath}`);
+          console.log(` Injected ${filePath} -> ${outputPath}`);
         })
         .catch((err) => {
           console.error(err);
