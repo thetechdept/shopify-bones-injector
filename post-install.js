@@ -6,6 +6,21 @@ const path = require("path");
 const glob = require("glob");
 const minify = require("html-minifier-terser").minify;
 console.log(`\n -- Shopify Bones Injector --`);
+
+console.log("__dirname", __dirname);
+console.log(
+  "path.dirname(require.main.filename)",
+  path.dirname(require.main.filename)
+);
+console.log(" path.resolve(__dirname)", path.resolve(__dirname));
+console.log(" process.env.PWD", process.env.PWD);
+console.log(" path.resolve(./)", path.resolve("./"));
+console.log("------------------\n\n");
+console.log("path.resolve(.)", path.resolve("."));
+console.log("process.env.INIT_CWD", process.env.INIT_CWD);
+console.log("process.env.PWD", process.env.PWD);
+console.log("process.cwd()", process.cwd());
+
 const dirOut = process.env.INIT_CWD; // project root
 glob("injections/**", {}, (err, files) => {
   files.forEach((filePath) => {
