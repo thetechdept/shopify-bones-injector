@@ -3,7 +3,7 @@
 //
 const fse = require("fs-extra");
 const path = require("path");
-const parentModule = require('parent-module');
+const parentModule = require("parent-module");
 const glob = require("glob");
 const minify = require("html-minifier-terser").minify;
 console.log("\x1b[36m", " -- Shopify Bones Injector -- ", "\x1b[0m");
@@ -21,7 +21,7 @@ console.log("path.resolve(.)", path.resolve("."));
 console.log("process.env.INIT_CWD", process.env.INIT_CWD);
 console.log("process.env.PWD", process.env.PWD);
 console.log("process.cwd()", process.cwd());
-console.log('parentModule',parentModule();
+console.log("parentModule", parentModule());
 
 const dirOut = process.env.INIT_CWD; // project root
 glob("injections/**", {}, (err, files) => {
