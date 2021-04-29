@@ -45,7 +45,7 @@ glob("injections/**", {}, (err, files) => {
           overwrite: true,
         })
         .then(() => {
-          console.log(` Minified ${filePath} -> ${outputPath}`);
+          console.log(` Pure contents ${filePath} -> ${outputPath}`);
         })
         .catch((err) => {
           console.error(err);
