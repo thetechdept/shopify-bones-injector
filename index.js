@@ -41,7 +41,7 @@ glob("injections/**", {}, (err, files) => {
         ],
       });
       fse
-        .outputFile(outputPath, minified, {
+        .outputFile(outputPath, contents, {
           overwrite: true,
         })
         .then(() => {
