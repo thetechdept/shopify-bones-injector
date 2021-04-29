@@ -26,7 +26,7 @@ glob("injections/**", {}, (err, files) => {
     if (extension == ".liquid") {
       const contents = fse.readFileSync(filePath, "utf8");
       var minified = minify(contents, {
-        caseSensitive: true, // I think there's a bug here with {{ fooBar }}
+        caseSensitive: true, // I think there's a bug here with {% fooBar %}
         collapseWhitespace: true,
         conservativeCollapse: true,
         preserveLineBreaks: false,
@@ -35,7 +35,8 @@ glob("injections/**", {}, (err, files) => {
         // Keep formatting for liquid comments with exclamation:
         //  {%- comment -%}!
         ignoreCustomFragments: [
-          /{%\- comment \-%\}![\s\S]*?{%\- endcomment \-%\}/,
+          /{%![\s\S]*?-%\}/, // {% %} liquid statements (it messes with variables cases! as noted above)
+          /{%\- comment \-%\}![\s\S]*?{%\- endcomment \-%\}/, // liquid comments
           /<\?[\s\S]*?\?>/,
         ],
       });
