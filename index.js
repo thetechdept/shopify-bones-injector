@@ -26,6 +26,7 @@ glob("injections/**", {}, (err, files) => {
     if (extension == ".liquid") {
       const contents = fse.readFileSync(filePath, "utf8");
       var minified = minify(contents, {
+        caseSensitive: true,
         collapseWhitespace: true,
         conservativeCollapse: true,
         preserveLineBreaks: false,
