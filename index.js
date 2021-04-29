@@ -41,11 +41,11 @@ glob("injections/**", {}, (err, files) => {
         ],
       });
       fse
-        .outputFile(outputPath, contents, {
+        .outputFile(outputPath, minified, {
           overwrite: true,
         })
         .then(() => {
-          console.log(` Pure contents ${filePath} -> ${outputPath}`);
+          console.log(` Minified ${filePath} -> ${outputPath}`);
         })
         .catch((err) => {
           console.error(err);
