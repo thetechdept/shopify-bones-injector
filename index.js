@@ -35,10 +35,9 @@ glob("injections/**", {}, (err, files) => {
         // Keep formatting for liquid comments with exclamation:
         //  {%- comment -%}!
         ignoreCustomFragments: [
-          /(?<={%)(.*?)(?=%})/, // {% %} liquid statements JIC
-          /(?<={%-)(.*?)(?=-%})/, // {%- -%} liquid statements JIC
-          /{%\- comment \-%\}![\s\S]*?{%\- endcomment \-%\}/, // liquid comments
-          /<\?[\s\S]*?\?>/,
+          /(?<={%)(.*?)(?=%})/g, // {% %} liquid statements JIC
+          /{%\- comment \-%\}![\s\S]*?{%\- endcomment \-%\}/g, // liquid comments
+          /<\?[\s\S]*?\?>/g,
         ],
       });
       fse
