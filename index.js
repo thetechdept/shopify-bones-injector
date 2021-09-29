@@ -36,6 +36,7 @@ glob("injections/**", {}, (err, files) => {
         //  {%- comment -%}!
         ignoreCustomFragments: [
           /(?<={%)(.*?)(?=%})/, // {% %} liquid statements JIC
+          /(?<={%-)(.*?)(?=-%})/, // {%- -%} liquid statements JIC
           /{%\- comment \-%\}![\s\S]*?{%\- endcomment \-%\}/, // liquid comments
           /<\?[\s\S]*?\?>/,
         ],
