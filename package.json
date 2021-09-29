@@ -19,7 +19,7 @@
   "dependencies": {
     "fs-extra": "^9.0.1",
     "glob": "^7.1.6",
-    "html-minifier-terser": "^5.1.1",
+    "html-minifier-terser": "^6.0.2",
     "parent-module": "^2.0.0",
     "parent-package-json": "^2.0.1"
   },
