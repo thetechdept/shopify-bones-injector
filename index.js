@@ -5,7 +5,7 @@ const fse = require("fs-extra");
 const path = require("path");
 const parentModule = require("parent-module");
 const glob = require("glob");
-const minify = require("html-minifier-terser").minify;
+const { minify } = require("html-minifier-terser");
 console.log(
   "\x1b[36m",
   "\n----------------------------\n-- Shopify Bones Injector --\n----------------------------",
@@ -13,7 +13,7 @@ console.log(
 );
 const dirOut = process.env.INIT_CWD; // project root (not parent package)
 glob("injections/**", {}, (err, files) => {
-  files.forEach((filePath) => {
+  files.forEach(async (filePath) => {
     const extension = path.extname(filePath);
     // Ignore directories and such
     if (!path.extname(filePath)) return;
@@ -25,7 +25,7 @@ glob("injections/**", {}, (err, files) => {
     // If .liquid, let's do a cheeky minification effort
     if (extension == ".liquid") {
       const contents = fse.readFileSync(filePath, "utf8");
-      var minified = minify(contents, {
+      var minified = await minify(contents, {
         caseSensitive: true,
         collapseWhitespace: true,
         conservativeCollapse: true,
